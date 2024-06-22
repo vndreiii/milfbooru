@@ -24,6 +24,9 @@ class PostEditSidebarControl extends events.EventTarget {
 
         this._postNotesOverlayControl.switchToPassiveEdit();
 
+        const isCreator = api.user ? api.user.name === post.user.name ? true : false : false;
+        const infix = isCreator ? "self" : "any";
+
         views.replaceContent(
             this._hostNode,
             template({
@@ -45,7 +48,7 @@ class PostEditSidebarControl extends events.EventTarget {
                 canCreateAnonymousPosts: api.hasPrivilege(
                     "posts:create:anonymous"
                 ),
-                canDeletePosts: api.hasPrivilege("posts:delete"),
+                canDeletePosts: api.hasPrivilege(`posts:delete:${infix}`),
                 canFeaturePosts: api.hasPrivilege("posts:feature"),
                 canMergePosts: api.hasPrivilege("posts:merge"),
             })
