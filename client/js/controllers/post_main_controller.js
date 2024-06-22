@@ -42,9 +42,9 @@ class PostMainController extends BasePostController {
                 }
 
                 this._post = post;
-                const isLoggedIn = post && api.isLoggedIn(post.user);
-                const isCreator = isLoggedIn && api.user.user_id == post.user_id;
+                const isCreator = api.user ? api.user.name === post.user.name ? true : false : false;
                 const infix = isCreator ? "self" : "any";
+                
                 this._view = new PostMainView({
                     post: post,
                     editMode: editMode,
