@@ -108,7 +108,7 @@
             </section>
         <% } %>
 
-        <% if (ctx.canFeaturePosts || ctx.canDeletePosts || ctx.canDeleteOwnPosts || ctx.canMergePosts) { %>
+        <% if (ctx.canFeaturePosts || ctx.canDeletePosts || ctx.canMergePosts) { %>
             <section class='management'>
                 <ul>
                     <% if (ctx.canFeaturePosts) { %>
@@ -118,9 +118,6 @@
                         <li><a href class='merge'>Merge this post with another</a></li>
                     <% } %>
                     <% if (ctx.canDeletePosts) { %>
-                        <li><a href class='delete'>Delete this post</a></li>
-                    <% } %>
-                    <% if (ctx.canDeleteOwnPosts) { %>
                         <li><a href class='delete'>Delete this post</a></li>
                     <% } %>
                 </ul>
