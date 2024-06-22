@@ -42,6 +42,8 @@ class PostMainController extends BasePostController {
                 }
 
                 this._post = post;
+                const isLoggedIn = post && api.isLoggedIn(post.user);
+                const infix = isLoggedIn ? "self" : "any";
                 this._view = new PostMainView({
                     post: post,
                     editMode: editMode,
@@ -52,8 +54,7 @@ class PostMainController extends BasePostController {
                         ? aroundResponse.next.id
                         : null,
                     canEditPosts: api.hasPrivilege("posts:edit"),
-                    canDeletePosts: api.hasPrivilege("posts:delete:any"),
-                    canDeleteOwnPosts: api.hasPrivilege("posts:delete:self"),
+                    canDeletePosts: api.hasPrivilege(`posts:delete:${infix}`),
                     canFeaturePosts: api.hasPrivilege("posts:feature"),
                     canListComments: api.hasPrivilege("comments:list"),
                     canCreateComments: api.hasPrivilege("comments:create"),
