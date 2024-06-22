@@ -174,8 +174,9 @@ def update_post(ctx: rest.Context, params: Dict[str, str]) -> rest.Response:
 
 @rest.routes.delete("/post/(?P<post_id>[^/]+)/?")
 def delete_post(ctx: rest.Context, params: Dict[str, str]) -> rest.Response:
-    auth.verify_privilege(ctx.user, "posts:delete")
     post = _get_post(params)
+    infix = "self" if ctx.user.user_id == post.user_id else "any"
+    auth.verify_privilege(ctx.user, "posts:delete:%s" % infix)
     versions.verify_version(post, ctx)
     snapshots.delete(post, ctx.user)
     posts.delete(post)
