@@ -52,7 +52,8 @@ class PostMainController extends BasePostController {
                         ? aroundResponse.next.id
                         : null,
                     canEditPosts: api.hasPrivilege("posts:edit"),
-                    canDeletePosts: api.hasPrivilege("posts:delete"),
+                    canDeletePosts: api.hasPrivilege("posts:delete:any"),
+                    canDeleteOwnPosts: api.hasPrivilege("posts:delete:self"),
                     canFeaturePosts: api.hasPrivilege("posts:feature"),
                     canListComments: api.hasPrivilege("comments:list"),
                     canCreateComments: api.hasPrivilege("comments:create"),
