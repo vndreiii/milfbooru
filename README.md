@@ -1,9 +1,7 @@
 # milfbooru
 
 Milfbooru is an image board engine inspired by services such as Danbooru,
-Gelbooru and Moebooru dedicated for small and medium communities. Its name [has
-its roots in Polish language and has onomatopeic meaning of scraping or
-scrubbing](https://sjp.pwn.pl/sjp/;2527372). It is pronounced as *shoorubooru*.
+Gelbooru and Moebooru dedicated for small and medium communities. xd
 
 ## Features
 
