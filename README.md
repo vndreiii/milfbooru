@@ -32,9 +32,6 @@ scrubbing](https://sjp.pwn.pl/sjp/;2527372). It is pronounced as *shoorubooru*.
 It is recommended that you use Docker for deployment.
 [See installation instructions.](doc/INSTALL.md)
 
-More installation resources, as well as related projects can be found on the
-[GitHub project Wiki](https://github.com/rr-/milfbooru/wiki)
-
 ## Screenshots
 
 Post list:
