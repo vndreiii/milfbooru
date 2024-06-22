@@ -117,7 +117,8 @@ privileges:
     'posts:edit:tags':              regular
     'posts:edit:thumbnail':         power
     'posts:feature':                moderator
-    'posts:delete':                 moderator
+    'posts:delete:any':             moderator
+    'posts:delete:self':            regular
     'posts:score':                  regular
     'posts:merge':                  moderator
     'posts:favorite':               regular
